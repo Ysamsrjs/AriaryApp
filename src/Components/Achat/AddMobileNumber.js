@@ -108,7 +108,7 @@ class AddMobileNumber extends Component {
 		return (
 			<Container style={styles.container}>
 				<StatusBar hidden={true} />
-				<Header style={{ backgroundColor: '#00BF9A', height: 60 }}>
+				<Header style={styles.header}>
 					<Left>
 						<Button transparent onPress={() => this.props.navigation.goBack()}>
 							<MaterialIcon name="arrow-back" size={25} fontWeight="900" color="#FFF" />

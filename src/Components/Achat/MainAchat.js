@@ -50,11 +50,15 @@ class MainAchat extends Component {
 		};
 	}
 
+	_showShareMenu(){
+
+	}
+
 	render() {
 		return (
 			<Container style={styles.container}>
 				<StatusBar hidden={true} />
-				<Header style={{ backgroundColor: '#00BF9A', height: 60 }}>
+				<Header style={styles.header}>
 					<Left>
 						<Button transparent onPress={() => this.props.navigation.navigate('DrawerOpen')}>
 							<Icon name="bars" size={25} style={{ color: '#FFF' }} />
@@ -64,7 +68,7 @@ class MainAchat extends Component {
 						<Title>Bons d'achat</Title>
 					</Body>
 					<Right>
-						<Button transparent>
+						<Button transparent onPress={()=>this._showShareMenu()}>
 							<Icon name="share-alt" size={25} style={{ color: '#FFF' }} />
 						</Button>
 						<Button transparent>
@@ -75,7 +79,7 @@ class MainAchat extends Component {
 				<Tabs style={{ elevation: 3 }}>
 					<Tab
 						heading={
-							<TabHeading style={{ backgroundColor: '#00BF9A' }}>
+							<TabHeading style={styles.modeaba}>
 								<Text style={{ color: '#fff' }}>Via Mobile Money</Text>
 							</TabHeading>
 						}
@@ -84,7 +88,7 @@ class MainAchat extends Component {
 					</Tab>
 					<Tab
 						heading={
-							<TabHeading style={{ backgroundColor: '#00BF9A' }}>
+							<TabHeading style={styles.modeaba}>
 								<Text style={{ color: '#fff' }}>Via Visa/Paypal</Text>
 							</TabHeading>
 						}
@@ -103,16 +107,5 @@ class MainAchat extends Component {
 		);
 	}
 }
-
-// define your styles
-const test = StyleSheet.create({
-	container: {
-		flex: 1,
-		justifyContent: 'center',
-		alignItems: 'center',
-		backgroundColor: '#2c3e50'
-	}
-});
-
 //make this component available to the app
 export default MainAchat;
