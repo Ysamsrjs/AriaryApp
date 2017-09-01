@@ -6,19 +6,19 @@ import { Root } from 'native-base';
 import { StackNavigator } from 'react-navigation';
 
 
-import Main from '../../NewUserAriary/InscriptionTemporaire/Main';
-import Bienvenue from '../../NewUserAriary/InscriptionTemporaire/Bienvenue';
-import App from './';
+import Main from '../NewUserAriary/InscriptionTemporaire/Main';
+import Bienvenue from '../NewUserAriary/InscriptionTemporaire/Bienvenue';
+import AppStack from './AppStack';
 
-const StartAriary = StackNavigator(
+const StartStack = StackNavigator(
 	{
 		Main: { screen: Main },
 		Bienvenue: { screen: Bienvenue },
-		App: { screen: App }
+		App: { screen: AppStack }
 	},
 	{
 		headerMode: 'none'
 	}
 );
 
-export default StartAriary;
+export default StartStack;

@@ -13,9 +13,9 @@ import {
 import Icon from 'react-native-vector-icons/FontAwesome';
 import { Container, Button, H3, Header, Text, Title, Body, Left, Right } from 'native-base';
 
-import LoginAriary from '../CompteAriary/LoginAriary';
+import LoginAriary from '../CompteAriary/Login/LoginAriary';
 import styles from './styles';
-import FacebookLogin from '../CompteAriary/FacebookLogin';
+import FacebookLogin from '../CompteAriary/Login/FacebookLogin';
 
 class Accueil extends Component {
 	constructor() {
@@ -73,30 +73,14 @@ class Accueil extends Component {
 								resizeMode="contain"
 							/>
 						</View>
-						<View style={[styles.mainText, { backgroundColor: 'transparent' }]}>
-							<Article style={[styles.text, { color: '#FFF' }]}>ARIARY.NET</Article>
-							<Article style={[styles.text, { color: '#FFF', fontSize: 18 }]}>
-								Une Solution de paiement en ligne
-							</Article>
-							<Article
-								style={[
-									styles.text,
-									{
-										color: '#FFF',
-										fontSize: 15,
-										fontStyle: 'italic',
-										paddingHorizontal: 10,
-										textAlign: 'center'
-									}
-								]}
-							>
-								AriaryNet est un Start-up permettant de faire vos achats et de faire vos transactions en
-								ligne que ce soit via Paypal ou Mobile Money
+						<View style={{padding:10}}>
+							<Article style={{ textAlign: 'center', color: '#fff', fontWeight: '900', fontSize: 25 }}>
+								Ariary.net
 							</Article>
 						</View>
 						<View style={{ marginBottom: 80, alignItems: 'center', justifyContent: 'center' }}>
 							<TouchableHighlight
-								style={{ borderRadius: 50, width: 300 }}
+								style={{ borderRadius: 50, width: 250 }}
 								onPress={() => {
 									this.props.navigation.navigate('StartAriary');
 								}}
@@ -122,7 +106,7 @@ class Accueil extends Component {
 									</Article>
 								</View>
 							</TouchableHighlight>
-							<Text style={{margin:3}}/>
+							<Text style={{ margin: 3 }} />
 							<Button
 								iconLeft
 								success

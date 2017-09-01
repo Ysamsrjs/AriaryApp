@@ -1,6 +1,6 @@
 //import liraries
 import React, { Component } from 'react';
-import { View, StyleSheet, TextInput, Text } from 'react-native';
+import { View, StyleSheet, TextInput, Text,Alert } from 'react-native';
 import { Container, Header, Title, Content, Button, Icon, Left, Right, Body } from 'native-base';
 
 import styles from './styles';
@@ -9,15 +9,25 @@ import FontIcon from 'react-native-vector-icons/FontAwesome';
 import MaterialIcon from 'react-native-vector-icons/MaterialIcons';
 import loginCss from '../../../assets/css/loginCss';
 // create a component
-class EditPassword extends Component {
+class Consulter extends Component {
 	constructor() {
 		super();
 		this.state = {
-			oldpassword: '',
-			newpassword: '',
-			confirmpassword: '',
+			password: '',
+			solde:500,
 			loading: false
 		};
+	}
+	showSolde(){
+		if(this.state.password!=null && this.state.password!=''){
+			Alert.alert('Solde','Votre solde est de'+ this.state.solde+' Ariary');
+			this.props.navigation.goBack();
+		}else{
+			Alert.alert('Erreur','Votre Mot de passe est incorect');
+		}
+	}
+	getSolde(){
+
 	}
 	render() {
 		return (
@@ -29,7 +39,7 @@ class EditPassword extends Component {
 						</Button>
 					</Left>
 					<Body>
-						<Title>Changer Mot de passe</Title>
+						<Title>Consultation solde</Title>
 					</Body>
 					<Right />
 				</Header>
@@ -38,29 +48,15 @@ class EditPassword extends Component {
 						style={{
 							justifyContent: 'center',
 							alignContent: 'center',
-							backgroundColor: '#eee',
 							padding: 15
 						}}
 					>
 						<View style={{ padding: 15, width: '100%' }}>
 							<View style={{ alignItems: 'center', justifyContent: 'center' }}>
 								<View style={loginCss.imageLogin}>
-									<MaterialIcon name="mode-edit" size={130} color="#00BF9A" />
+									<Text>Entrez mot de passe</Text>
 								</View>
 							</View>
-						</View>
-						<View style={loginCss.inputWrap}>
-							<View style={loginCss.iconWrap}>
-								<MaterialIcon size={20} color="#00BF9A" name="lock" />
-							</View>
-							<TextInput
-								placeholder="Ancien Mot de passe"
-								keyboardType="numeric"
-								style={loginCss.input}
-								autoFocus={false}
-								onChangeText={oldpassword => this.setState({ oldpassword })}
-								returnKeyType="next"
-							/>
 						</View>
 						<View style={loginCss.inputWrap}>
 							<View style={loginCss.iconWrap}>
@@ -69,31 +65,12 @@ class EditPassword extends Component {
 							<TextInput
 								placeholder="Nouveau mot de passe"
 								secureTextEntry
-								onChangeText={newpassword => this.setState({ newpassword })}
+								onChangeText={password => this.setState({ password })}
 								style={loginCss.input}
 								secureTextEntry={true}
+								returnKeyType='done'
+								onEndEditing={() => this.showSolde()}
 							/>
-						</View>
-
-						<View style={loginCss.inputWrap}>
-							<View style={loginCss.iconWrap}>
-								<MaterialIcon name="lock" size={20} color="#00BF9A" />
-							</View>
-							<TextInput
-								placeholder="Confirmer mot de passe"
-								secureTextEntry
-								onChangeText={confirmpassword => this.setState({ confirmpassword })}
-								style={loginCss.input}
-								secureTextEntry={true}
-							/>
-						</View>
-
-						<View style={loginCss.seperator} />
-						<View style={{ alignItems: 'flex-end' }}>
-							<Button success onPress={() => this._validate()} style={{ alignSelf: 'flex-end' }}>
-								<Text style={{ color: '#ffffff', fontWeight: '800' }}>Valider</Text>
-							</Button>
-							<View style={{ flex: 1 }} />
 						</View>
 					</View>
 				</Content>
@@ -113,4 +90,4 @@ const test = StyleSheet.create({
 });
 
 //make this component available to the app
-export default EditPassword;
+export default Consulter;

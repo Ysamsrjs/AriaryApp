@@ -1,7 +1,6 @@
 //import liraries
 import React, { Component } from 'react';
 import { View, StyleSheet, TextInput, Text } from 'react-native';
-
 import { Container, Header, Title, Content, Button, Icon, Left, Right, Body } from 'native-base';
 
 import styles from './styles';
@@ -10,12 +9,11 @@ import FontIcon from 'react-native-vector-icons/FontAwesome';
 import MaterialIcon from 'react-native-vector-icons/MaterialIcons';
 import loginCss from '../../../assets/css/loginCss';
 // create a component
-class EditPhone extends Component {
+class EditPseudo extends Component {
 	constructor() {
 		super();
 		this.state = {
-			oldphone: '',
-			newphone: '',
+			pseudo: '',
 			password: '',
 			loading: false
 		};
@@ -30,7 +28,7 @@ class EditPhone extends Component {
 						</Button>
 					</Left>
 					<Body>
-						<Title>Changer Tél</Title>
+						<Title>Changer Pseudo</Title>
 					</Body>
 					<Right />
 				</Header>
@@ -43,49 +41,38 @@ class EditPhone extends Component {
 							padding: 15
 						}}
 					>
-						<View style={{ alignItems: 'center', justifyContent: 'center' }}>
-							<View style={loginCss.imageLogin}>
-								<MaterialIcon name="mode-edit" size={130} color="#00BF9A" />
+						<View style={{ padding: 15, width: '100%' }}>
+							<View style={{ alignItems: 'center', justifyContent: 'center' }}>
+								<View style={loginCss.imageLogin}>
+									<MaterialIcon name="mode-edit" size={130} color="#00BF9A" />
+								</View>
 							</View>
 						</View>
 						<View style={loginCss.inputWrap}>
 							<View style={loginCss.iconWrap}>
-								<MaterialIcon primary size={20} color="rgba(52, 152, 219,1.0)" name="call" />
+								<MaterialIcon size={20} color="#00BF9A" name="lock" />
 							</View>
 							<TextInput
-								placeholder="Ancien Numero"
-								keyboardType="numeric"
+								placeholder="Pseudo"
 								style={loginCss.input}
 								autoFocus={false}
-								onChangeText={oldphone => this.setState({ oldphone })}
+								onChangeText={pseudo => this.setState({ pseudo })}
 								returnKeyType="next"
 							/>
 						</View>
 						<View style={loginCss.inputWrap}>
 							<View style={loginCss.iconWrap}>
-								<MaterialIcon primary size={20} color="rgba(52, 152, 219,1.0)" name="call" />
+								<MaterialIcon name="lock" size={20} color="#00BF9A" />
 							</View>
 							<TextInput
-								placeholder="Nouveau Numero"
-								keyboardType="phone-pad"
-								style={loginCss.input}
-								autoFocus={false}
-								onChangeText={newphone => this.setState({ newphone })}
-								returnKeyType="next"
-							/>
-						</View>
-						<View style={loginCss.inputWrap}>
-							<View style={loginCss.iconWrap}>
-								<Icon name="lock" size={20} color="#00BF9A" />
-							</View>
-							<TextInput
-								placeholder="Mot de passe"
+								placeholder="Nouveau mot de passe"
 								secureTextEntry
 								onChangeText={password => this.setState({ password })}
 								style={loginCss.input}
 								secureTextEntry={true}
 							/>
 						</View>
+
 						<View style={loginCss.seperator} />
 						<View style={{ alignItems: 'flex-end' }}>
 							<Button success onPress={() => this._validate()} style={{ alignSelf: 'flex-end' }}>
@@ -111,4 +98,4 @@ const test = StyleSheet.create({
 });
 
 //make this component available to the app
-export default EditPhone;
+export default EditPseudo;

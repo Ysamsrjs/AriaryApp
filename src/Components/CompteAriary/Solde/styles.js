@@ -26,5 +26,12 @@ export default {
 		flex: 1,
 		justifyContent: 'center',
 		alignItems: 'center'
+	},
+	centeredContent: {
+		flex: 1,
+		justifyContent: 'center',
+		alignContent: 'center',
+		backgroundColor: '#eee',
+		padding: 15
 	}
 };

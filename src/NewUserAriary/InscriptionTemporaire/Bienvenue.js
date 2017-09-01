@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { StatusBar, View, TouchableHighlight, Dimensions, Image, rEFRE} from 'react-native';
+import { StatusBar, View, TouchableHighlight, Dimensions, Image, rEFRE } from 'react-native';
 import {
 	Container,
 	Header,
@@ -23,12 +23,13 @@ class Bienvenue extends Component {
 	constructor(props) {
 		super(props);
 		this.state = {
-			loading:false,
+			loading: false,
 			identifiant: '',
 			phoneNumber: '',
+			compte:'',
 			tab1: false,
 			tab2: false,
-			password:'Arairy1'
+			password: 'Arairy1'
 		};
 	}
 
@@ -50,12 +51,14 @@ class Bienvenue extends Component {
 	componentWillMount() {
 		this.setState({
 			identifiant: this.props.navigation.state.params.pseudo,
-			phoneNumber: this.props.navigation.state.params.phone
+			phoneNumber: this.props.navigation.state.params.phone,
+			password:this.props.navigation.state.params.password,
+			compte:this.props.navigation.state.params.compte
 		});
 		//addTempUser();
 	}
 	async addTempUser() {
-		this.setState({ loading: true});
+		this.setState({ loading: true });
 		if (!this.isEmptyField()) {
 			let url = 'http://192.168.1.20/ariary2/web/app.php/api/add';
 			try {
@@ -78,12 +81,11 @@ class Bienvenue extends Component {
 							this.setState({ message: responseJson.error_message });
 							Alert.alert('Erreur Login', responseJson.error_message);
 						} else {
-							
 						}
 					});
 				this.setState({ loading: false });
 			} catch (error) {
-				this.setState({ loading: false});
+				this.setState({ loading: false });
 				Alert.alert('Erreur Login', error);
 			}
 		} else {
@@ -150,35 +152,39 @@ class Bienvenue extends Component {
 						<View style={styles.textbienvenue}>
 							<Materialcon name="done" color="#009688" size={30} style={{ fontWeight: '900' }} />
 							<Text style={{ flexWrap: 'wrap', flex: 1 }}>
-								Félicitation, nous venons de créer un compte temporaire pour vous
+								Félicitation, nous venons de créer un compte temporaire avec  500 Ar de solde.
 							</Text>
 						</View>
 
 						<View style={styles.textbienvenue}>
 							<Materialcon name="done" color="#009688" size={30} style={{ fontWeight: '900' }} />
 							<Text style={{ flexWrap: 'wrap', flex: 1 }}>
-								Votre Pseudo est {this.state.identifiant} 
+								On vous a attribué le numero de compte {this.state.compte}
 							</Text>
 						</View>
 						<View style={styles.textbienvenue}>
 							<Materialcon name="done" color="#009688" size={30} style={{ fontWeight: '900' }} />
 							<Text style={{ flexWrap: 'wrap', flex: 1 }}>
-								et Votre Tél est {this.state.phoneNumber}  
+								Vous avez choisi le pseudo {this.state.identifiant}
+							</Text>
+						</View>
+						<View style={styles.textbienvenue}>
+							<Materialcon name="done" color="#009688" size={30} style={{ fontWeight: '900' }} />
+							<Text style={{ flexWrap: 'wrap', flex: 1 }}>
+								Votre numéro Tél est {this.state.phoneNumber}
+							</Text>
+						</View>
+						<View style={styles.textbienvenue}>
+							<Materialcon name="done" color="#009688" size={30} style={{ fontWeight: '900' }} />
+							<Text style={{ flexWrap: 'wrap', flex: 1 }}>
+								Grâce à votre compte temporaire ariary, vous pouvez déjà recevoir de l'argent
 							</Text>
 						</View>
 
 						<View style={styles.textbienvenue}>
 							<Materialcon name="done" color="#009688" size={30} style={{ fontWeight: '900' }} />
 							<Text style={{ flexWrap: 'wrap', flex: 1 }}>
-								Grâce à votre compte ariary, vous pouvez recevoir ou transferer de l'argent
-							</Text>
-						</View>
-
-						<View style={styles.textbienvenue}>
-							<Materialcon name="done" color="#009688" size={30} style={{ fontWeight: '900' }} />
-							<Text style={{ flexWrap: 'wrap', flex: 1 }}>
-								Completer vos informations pour pouvoir bénéficier toutes nos
-								services
+								L'assistance de configuration vous aide à completer vos informations
 							</Text>
 						</View>
 					</View>
@@ -191,12 +197,12 @@ class Bienvenue extends Component {
 				<Footer style={styles.footer}>
 					<FooterTab style={styles.footer}>
 						<Button active={this.state.tab1} onPress={() => this.toggleTab1()}>
-							<Icon name="user-plus" size={20} color="#FFF" style={{ fontWeight: '900' }} />
-							<Text style={{ color: '#fff' }}>Sign Up</Text>
+							<Materialcon name="settings" size={20} color="#FFF" style={{ fontWeight: '900' }} />
+							<Text style={{ color: '#fff' }}>Configurer compte</Text>
 						</Button>
 						<Button active={this.state.tab2} onPress={() => this.toggleTab2()}>
 							<Materialcon name="done" size={20} color="#FFF" style={{ fontWeight: '900' }} />
-							<Text style={{ color: '#fff' }}>Skip</Text>
+							<Text style={{ color: '#fff' }}>Passer</Text>
 						</Button>
 					</FooterTab>
 				</Footer>

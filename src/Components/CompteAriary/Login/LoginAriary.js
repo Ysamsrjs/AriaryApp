@@ -15,8 +15,8 @@ import {
 } from 'react-native';
 
 import Icon from 'react-native-vector-icons/FontAwesome';
-import loginCss from '../../assets/css/loginCss';
-import FacebookLogin from '../CompteAriary/FacebookLogin';
+import loginCss from '../../../assets/css/loginCss';
+import FacebookLogin from './FacebookLogin';
 
 class LoginAriary extends React.Component {
 	static proptypes = {
@@ -58,7 +58,7 @@ class LoginAriary extends React.Component {
 	async _userLogin() {
 		this.setState({ isLoggedIn: true, message: '' });
 		if (!this.isEmptyField()) {
-			let url = 'http://192.168.1.20/ariary2/web/app.php/api/login';
+			let url = 'http://54.229.79.45/ariary2API/web/api/login';
 			try {
 				await fetch(url, {
 					method: 'POST',
@@ -209,7 +209,7 @@ class LoginAriary extends React.Component {
 									>
 										<Image
 											style={{ width: 25, height: 25, marginRight: 5 }}
-											source={require('../../assets/images/ariary.png')}
+											source={require('../../../assets/images/ariary.png')}
 											resizeMode="contain"
 										/>
 										<Text style={{ color: '#ffffff', fontWeight: '900' }}>Se connecter</Text>

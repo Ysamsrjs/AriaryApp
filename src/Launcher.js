@@ -1,8 +1,15 @@
 
-import React from 'react';
-import { StackNavigator } from 'react-navigation';
-import { View, ActivityIndicator, ListView, AsyncStorage,Image } from 'react-native';
-import Expo from 'expo';
+import React, { Component } from 'react';
+import { View, Text, StyleSheet } from 'react-native';
 
-import Home from './Components/Home/';
-export default Home;
+import MainStack from './Stack/MainStack';
+// create a component
+class Launcher extends Component {
+    render() {
+        return (
+            <MainStack />
+        );
+    }
+}
+
+export default Launcher;

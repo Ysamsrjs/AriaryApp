@@ -32,9 +32,8 @@ import {
 	StatusBar
 } from 'react-native';
 
-import Login from '../CompteAriary/LoginAriary';
 import Icon from 'react-native-vector-icons/FontAwesome';
-import loginCss from '../../assets/css/loginCss';
+import loginCss from '../../../../assets/css/loginCss';
 import MaterialIcon from 'react-native-vector-icons/MaterialIcons';
 
 import styles from './Styles';
@@ -125,13 +124,7 @@ class AddMobileNumber extends Component {
 				</Header>
 				<Content contentContainerStyle={{flex: 1, justifyContent: 'center'}}>
 					<View
-						style={{
-							flex: 1,
-							justifyContent: 'center',
-							alignContent: 'center',
-							backgroundColor: '#eee',
-							padding: 15
-						}}
+						style={styles.centeredContent}
 					>
 						<View style={{ alignContent: 'center' }}>
 							<Text style={{ fontWeight: '900', textAlign: 'center', color: '#00BF9A', fontSize: 18 }}>

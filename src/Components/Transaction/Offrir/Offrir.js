@@ -32,9 +32,8 @@ import {
 	StatusBar
 } from 'react-native';
 
-import Login from '../CompteAriary/LoginAriary';
 import Icon from 'react-native-vector-icons/FontAwesome';
-import loginCss from '../../assets/css/loginCss';
+import loginCss from '../../../assets/css/loginCss';
 
 import MaterialIcon from 'react-native-vector-icons/MaterialIcons';
 
@@ -105,7 +104,7 @@ class Offrir extends Component {
 	}
 	async _validerOffre() {
 		this.setState({ loading: true, erreur: '' });
-		let url = 'http://192.168.1.20/ariary2/web/app.php/api/transaction';
+		let url = 'http://54.229.79.45/ariary2API/web/api/transaction';
 		try {
 			await fetch(url, {
 				method: 'POST',
@@ -180,7 +179,7 @@ class Offrir extends Component {
 							<View style={loginCss.iconWrap}>
 								<Image
 									style={{ width: 20, height: 20 }}
-									source={require('../../assets/images/ariary.png')}
+									source={require('../../../assets/images/ariary.png')}
 									resizeMode="contain"
 								/>
 							</View>

@@ -6,10 +6,8 @@ import { Root } from 'native-base';
 import Expo from 'expo';
 
 import Accueil from './Accueil';
-import Login from '../CompteAriary/LoginAriary';
-import StartAriary from './StartAriary';
-import App from './App';
 
+import AppStack from '../../Stack/AppStack';
 class Loader extends React.Component {
 	constructor() {
 		super();
@@ -68,22 +66,11 @@ class Loader extends React.Component {
 			);
 		}
 		if (this.state.hasToken) {
-			return <App />;
+			return <AppStack />;
 		} else {
-			return <AppNavigation />;
+			return <Accueil navigation={this.props.navigation} />;
 		}
 	}
 }
-const Home = StackNavigator(
-	{
-		Loader: { screen: Loader },
-		Accueil: { screen: Accueil },
-		StartAriary: { screen: StartAriary },
-		App: { screen: App }
-	},
-	{
-		headerMode: 'none'
-	}
-);
 
-export default Home;
+export default Loader;

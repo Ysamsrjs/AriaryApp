@@ -20,7 +20,7 @@ import Expo from 'expo';
 
 const APP_ID="1534612943226959";
 import Icon from 'react-native-vector-icons/FontAwesome';
-import loginCss from '../../assets/css/loginCss';
+import loginCss from '../../../assets/css/loginCss';
 
 const HEADER = '#3b5998';
 const BGWASH = 'rgba(255,255,255,0.8)';

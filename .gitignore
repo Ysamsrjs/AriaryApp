@@ -1,8 +1,9 @@
 node_modules/
 .expo/
 .vscode/
-npm-debug.*
 .gitignore
 .flowconfig
 .babelrc
 .watchmanconfig
+npm-debug.*
+

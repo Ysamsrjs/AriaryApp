@@ -34,7 +34,7 @@ export default {
         marginVertical: 3,
         alignItems: 'center',
         justifyContent: 'center',
-        width: 300,
+        width: 250,
         height:60,
         paddingVertical:20,
     },

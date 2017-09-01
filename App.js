@@ -2,9 +2,9 @@
 
 
 import React from "react";
-import Home from "./src/Launcher";
-export default class App1 extends React.Component {
+import Launcher from "./src/Launcher";
+export default class App extends React.Component {
   render() {
-    return <Home />;
+    return <Launcher />;
   }
 }

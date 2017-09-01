@@ -30,9 +30,8 @@ import {
 	StatusBar
 } from 'react-native';
 
-import Login from '../CompteAriary/LoginAriary';
 import Icon from 'react-native-vector-icons/FontAwesome';
-import loginCss from '../../assets/css/loginCss';
+import loginCss from '../../../assets/css/loginCss';
 
 import MaterialIcon from 'react-native-vector-icons/MaterialIcons';
 
@@ -89,31 +88,32 @@ class ProfileAriary extends Component {
 					</Right>
 				</Header>
 				<Content padder contentContainerStyle={{ flex: 1, justifyContent: 'center' }}>
-					<View>
-						<View style={{padding: 15, width: '100%' }}>
-							<View style={{alignItems: 'center', justifyContent: 'center' }}>
+					<View style={{alignItems:'center'}}>
+						<View style={{ padding: 15, width: '100%' }}>
+							<View style={{ alignItems: 'center', justifyContent: 'center' }}>
 								<View style={loginCss.imageLogin}>
 									<Icon name="user-circle-o" size={130} color="#00BF9A" />
 								</View>
 							</View>
 						</View>
-						<View style={{justifyContent: 'center' }}>
+						<View style={{ justifyContent: 'center',alignItems:'center'}}>
 							<View style={styles.textbienvenue}>
-								<MaterialIcon name="done" color="#009688" size={30} style={{ fontWeight: '900' }} />
-								<Text style={{ fontSize: 18 }}>Nom:</Text>
 								<Text style={{ color: '#009688', fontSize: 18, textAlign: 'right' }}>
 									{this.state.nom}
 								</Text>
 							</View>
 							<View style={styles.textbienvenue}>
-								<MaterialIcon name="done" color="#009688" size={30} style={{ fontWeight: '900' }} />
 								<Text style={{ fontSize: 18 }}>Pseudo:</Text>
 								<Text style={{ color: '#009688', fontSize: 18, textAlign: 'right' }}>
 									{this.state.pseudo}
 								</Text>
 							</View>
 							<View style={styles.textbienvenue}>
-								<MaterialIcon name="done" color="#009688" size={30} style={{ fontWeight: '900' }} />
+								<Image
+									style={{ width: 25, height: 25, marginRight: 5 }}
+									source={require('../../../assets/images/ariary.png')}
+									resizeMode="contain"
+								/>
 								<Text style={{ fontSize: 18 }}>Numéro de compte:</Text>
 								<Text style={{ color: '#009688', fontSize: 18, textAlign: 'right' }}>
 									{this.state.code}
@@ -124,38 +124,22 @@ class ProfileAriary extends Component {
 						<View style={loginCss.seperator} />
 
 						<View style={{ flexDirection: 'row', justifyContent: 'center', alignItems: 'center' }}>
-							<TouchableHighlight style={[loginCss.toutchable, { width: '49%', marginRight: '1%' }]}>
-								<View
-									style={[
-										loginCss.buttonLogin,
-										{
-											backgroundColor: '#F44336',
-											borderTopLeftRadius: 100,
-											borderBottomLeftRadius: 100
-										}
-									]}
-								>
-									<MaterialIcon name="edit" size={20} color="#fff" />
-									<Text style={{ color: '#ffffff', fontWeight: '900' }}>Edit Password</Text>
-								</View>
-							</TouchableHighlight>
-							<TouchableHighlight style={[loginCss.toutchable, { width: '49%', marginLeft: '1%' }]}>
+							<TouchableHighlight style={[loginCss.toutchable, { width: '50%'}]}>
 								<View
 									style={[
 										loginCss.buttonLogin,
 										{
 											backgroundColor: '#00BF9A',
-											borderTopRightRadius: 100,
-											borderBottomRightRadius: 100
+											borderRadius:5,
 										}
 									]}
 								>
 									<Image
 										style={{ width: 25, height: 25, marginRight: 5 }}
-										source={require('../../assets/images/ariary.png')}
+										source={require('../../../assets/images/ariary.png')}
 										resizeMode="contain"
 									/>
-									<Text style={{ color: '#ffffff', fontWeight: '900' }}>Mon solde</Text>
+									<Text style={{ color: '#ffffff', fontWeight: '900' }}>Consulter Mon solde</Text>
 								</View>
 							</TouchableHighlight>
 						</View>

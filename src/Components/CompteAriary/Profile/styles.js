@@ -8,5 +8,9 @@ export default {
   },
   mb10: {
     marginBottom: 10
-  }
+  },
+  textbienvenue:{
+    flexDirection:'row',
+    padding:10,
+  },
 };
