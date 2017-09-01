@@ -20,6 +20,7 @@ import TestShare1 from '../Components/AppShare/TestShare1';
 import EditMail from '../Components/CompteAriary/Config/EditMail';
 import EditPseudo from '../Components/CompteAriary/Config/EditPseudo';
 import Consulter from '../Components/CompteAriary/Solde/Consulter';
+import MainInscription from '../Components/CompteAriary/Inscription/MainInscription';
 
 const AppStack = StackNavigator(
 	{
@@ -44,7 +45,9 @@ const AppStack = StackNavigator(
 		EditPseudo: { screen: EditPseudo },
 		EditMail: { screen: EditMail },
 
-		ConsulterSolde: { screen: Consulter }
+		ConsulterSolde: { screen: Consulter },
+
+		Inscription: { screen: MainInscription }
 	},
 	{
 		initialRouteName: 'Drawer',

@@ -3,7 +3,7 @@ import { AppRegistry,StyleSheet,View, Text } from 'react-native';
 import ViewPager from 'react-native-viewpager';
 import StepIndicator from 'react-native-step-indicator';
 import EditMail from '../Config/EditMail';
-const PAGES = ["","","","",""];
+const PAGES = [<EditMail/>,<EditMail/>,<EditMail/>,<EditMail/>,<EditMail/>];
 
 const firstIndicatorStyles = {
   stepIndicatorSize: 30,

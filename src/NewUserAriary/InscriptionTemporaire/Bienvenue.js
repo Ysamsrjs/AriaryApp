@@ -38,7 +38,7 @@ class Bienvenue extends Component {
 			tab1: true,
 			tab2: false
 		});
-		this.props.navigation.navigate('Inscription1');
+		this.props.navigation.navigate('Inscription');
 	}
 
 	toggleTab2() {
